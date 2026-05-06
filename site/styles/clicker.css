@@ -17,9 +17,16 @@ p {
     font-family: "Lucida Handwriting", Arial, sans-serif;
     text-decoration: #000000;
     position: absolute;
+}
+.text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.beta {
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 @keyframes shake {
   0% { transform: translate(-50%, -50%) translate(1px, 1px) rotate(0deg); }

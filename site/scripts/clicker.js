@@ -1,11 +1,17 @@
-const btn = document.querySelector('.button');
-let anti_double = false;
+const btn = document.querySelector(".button");
+const beta = document.querySelector(".beta");
+const textelem = document.querySelector(".text");
+const end = document.querySelector(".endscreen");
+const speed = 10;
 let y_px = 0;
 let floor_px = 0;
-const speed = 10;
 let index = 0;
-const textelem = document.querySelector('.text');
-const end = document.querySelector('.endscreen')
+let anti_double = false;
+if ((localStorage.getItem("explosion")) !== null) {
+   btn.style.display = "none"; 
+   btn.disabled = true;
+
+}
 textelem.style.display = "none";
 end.style.display = "none";
 function fallstart() {
@@ -18,11 +24,11 @@ function fallstart() {
 }
 function fall() {
     y_px += speed;
-    btn.style.top = y_px + 'px';
+    btn.style.top = y_px + "px";
     if (y_px < floor_px) {
         requestAnimationFrame(fall);
     } else {
-        btn.style.top = floor_px + 'px';
+        btn.style.top = floor_px + "px";
         textshi();
     }
 }
@@ -34,16 +40,20 @@ function textshi() {
         "You broke my game...",
         "I spent 2 hours making this...",
         "Only for YOU to break it.",
-        "Your such a meanie..."];
+        "I TOLD you it was in a beta state...",
+        "You KNEW it wasn't ready...",
+        "And yet...",
+        "You STILL tried to play."];
     messages.forEach((msg) => {
         setTimeout(() => {
-            textelem.classList.add('shaking');
+            textelem.classList.add("shaking");
             cooltext(msg, textelem);
         }, delay);
         delay += (msg.length * 25) + 1500;
     });
     setTimeout(() => {
         end.style.display = "block";
+        localStorage.setItem("explosion","true");
     }, delay);
 }
 function cooltext(prompt,elem) {
