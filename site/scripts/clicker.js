@@ -12,6 +12,7 @@ let anti_double = false;
 if ((localStorage.getItem("explosion")) !== null) {
    btn.style.display = "none"; 
    btn.disabled = true;
+   textelem.textContent = "Notice: Some idiot broke it, come back another time";
 }
 explode.style.display = "none";
 textelem.style.display = "none";
