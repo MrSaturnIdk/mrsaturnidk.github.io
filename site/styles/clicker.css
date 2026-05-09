@@ -20,6 +20,9 @@ p {
     text-decoration: #000000;
     position: absolute;
 }
+#button {
+    display: block;
+}
 #mad_text {
     top: 50%;
     left: 50%;
