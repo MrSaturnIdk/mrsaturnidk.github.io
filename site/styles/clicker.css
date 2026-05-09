@@ -20,15 +20,22 @@ p {
     text-decoration: #000000;
     position: absolute;
 }
+#button {
+    display: block;
+}
 #mad_text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
 }
 #beta {
-  top: 75%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
+#endscreen {
+    display: none;
+}
 }
 .giant_image{
     position: fixed;
@@ -43,7 +50,6 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: clamp(30rem, 5vw, 50rem);
 }
 .shaking {
   animation: shake 0.2s infinite;
