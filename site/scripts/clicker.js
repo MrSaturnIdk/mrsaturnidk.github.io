@@ -67,7 +67,7 @@ function cooltext(prompt,elem) {
 
     function type() {
         if (repeat < prompt.length) {
-            elem.textContent += prompt.charAt(index);
+            elem.textContent += prompt.charAt(repeat);
             repeat++;
             setTimeout(type, 25);
         }
