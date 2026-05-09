@@ -4,6 +4,7 @@ on:
   push:
     branches: ["main"]
     paths: site/**
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -32,21 +33,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Enter folder
-        run: |
-        #zip -r site.zip ./site
-      - name: 
-        uses: IsaacShelton/update-existing-release@v1.3.5
-        with:
-          token: ${{secrets.GITHUB_TOKEN}}
-          release: "Rolling release"
-          tag: "rolling"
-          message: "rolling site release"
-          body: "Rolling site release"
-          files: >
-            site.zip
