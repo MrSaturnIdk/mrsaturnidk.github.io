@@ -19,7 +19,7 @@ if ((localStorage.getItem("explosion")) !== null) {
 }
 function wait_explode() {
     return new Promise((resolve) => {
-        explode.addEventListener("ended", resolve, {once: true})
+        explode.addEventListener("ended", resolve, {once: true});
     });
 }
 function fall() {
