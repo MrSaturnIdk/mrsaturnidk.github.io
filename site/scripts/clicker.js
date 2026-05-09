@@ -6,8 +6,6 @@ const btn = document.querySelector("#button")
 explode.style.display = "none";
 textelem.style.display = "none";
 end.style.display = "none";
-let floor_px = 0;
-let index = 0;
 let anti_double = false;
 if ((localStorage.getItem("explosion")) !== null) {
    btn.style.display = "none"; 
@@ -61,6 +59,7 @@ function explode() {
     if (anti_double) return;
     anti_double = true;
     btn.style.display = "none";
+    btn.disabled = true;
     explode.style.display = "block";
         async function explosion() {
             explode.play();
