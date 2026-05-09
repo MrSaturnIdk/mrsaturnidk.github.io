@@ -67,6 +67,5 @@ function explode() {
             await wait_explode();
         }
         text_shit();
-    }
 }
-}
+
