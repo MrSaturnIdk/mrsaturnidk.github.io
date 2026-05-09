@@ -16,7 +16,7 @@ function wait_explode() {
 }
 function text_shit() {
     textelem.style.display = "block";
-    let delay = 0
+    let delay = 0;
     const messages = [
         "How could you...",
         "You broke my game...",
@@ -58,10 +58,10 @@ function explode() {
     btn.style.display = "none";
     btn.disabled = true;
     explode.style.display = "block";
-        async function explosion() {
+    async function explosion() {
             explode.play();
             await wait_explode();
         }
-        text_shit();
+    text_shit();
 }
 
