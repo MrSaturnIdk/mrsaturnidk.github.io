@@ -6,6 +6,9 @@ const explode = document.querySelector("#explode")
 const btn = document.querySelector("#button")
 const speed = 10;
 let y_px = 0;
+explode.style.display = "none";
+textelem.style.display = "none";
+end.style.display = "none";
 let floor_px = 0;
 let index = 0;
 let anti_double = false;
@@ -14,9 +17,6 @@ if ((localStorage.getItem("explosion")) !== null) {
    btn.disabled = true;
    textelem.textContent = "Notice: Some idiot broke it, come back another time";
 }
-explode.style.display = "none";
-textelem.style.display = "none";
-end.style.display = "none";
 function wait_explode() {
     return new Promise((resolve) => {
         explode.addEventListener("ended", resolve, {once: true})
