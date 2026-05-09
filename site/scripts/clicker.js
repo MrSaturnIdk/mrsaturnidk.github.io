@@ -3,9 +3,6 @@ const textelem = document.querySelector("#mad_text");
 const end = document.querySelector("#endscreen");
 const explode = document.querySelector("#explode")
 const btn = document.querySelector("#button")
-explode.style.display = "none";
-textelem.style.display = "none";
-end.style.display = "none";
 let anti_double = false;
 if ((localStorage.getItem("explosion")) !== null) {
    btn.style.display = "none"; 

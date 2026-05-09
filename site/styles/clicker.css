@@ -24,11 +24,15 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
 }
 #beta {
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
+#endscreen {
+    display: none;
+}
 }
 .giant_image{
     position: fixed;
