@@ -40,7 +40,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Enter folder
         run: |
-        #zip -r site.zip ./site
+         zip -r site.zip ./site
       - name: 
         uses: IsaacShelton/update-existing-release@v1.3.5
         with:
