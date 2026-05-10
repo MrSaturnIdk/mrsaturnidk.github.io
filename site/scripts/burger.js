@@ -1,17 +1,7 @@
 const load = document.querySelector("#loading");
 const text = document.querySelector("#burger_text");
 const wait = (miliseconds) => new Promise(resolve => setTimeout(resolve, miliseconds));
-let printable = "";
 let displayable_time;
-// I'm too lazy for proper error handling lol
-let time = +localStorage.getItem("stare_time");
-if (time == null || time == NaN) {
-    time = 0;
-    console.log("New user ig (or erased browsing data/glitch)");
-}
-else {
-    console.log("Data refreshed");
-}
 function make_displayable_time(seconds) {
     const units = [
     {label: "second", modulo: 60, divide: 60},    
@@ -61,8 +51,6 @@ async function time_loop() {
         text.textContent = `You have stared at the hamburger for ${displayable_time}.`;
         await wait(1000);
         time++;
-        printable = time.toString;
-        localStorage.setItem("stare_time", printable)
     }
 }
 load.style.display = "none";
