@@ -1,5 +1,5 @@
 const load = document.querySelector("#loading");
-const text = document.querySelector("#burger_text")
+const text = document.querySelector("#burger_text");
 const wait = (miliseconds) => new Promise(resolve => setTimeout(resolve, miliseconds));
 let displayable_time;
 // I'm too lazy for proper error handling lol
@@ -9,7 +9,7 @@ if (time == null) {
     console.log("New user ig (or erased browsing data)");
 }
 else {
-    console.log("Data refreshed")
+    console.log("Data refreshed");
 }
 function make_displayable_time(seconds) {
     const units = [
