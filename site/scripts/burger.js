@@ -3,7 +3,7 @@ const text = document.querySelector("#burger_text");
 const wait = (miliseconds) => new Promise(resolve => setTimeout(resolve, miliseconds));
 let displayable_time;
 // I'm too lazy for proper error handling lol
-let time = localStorage.getItem("stare_time");
+let time = Number(localStorage.getItem("stare_time"));
 if (time == null) {
     time = 0;
     console.log("New user ig (or erased browsing data)");
@@ -60,6 +60,7 @@ async function time_loop() {
         text.textContent = `You have stared at the hamburger for ${displayable_time}.`;
         await wait(1000);
         time++;
+        localStorage.setItem("stare_time",`${time}`)
     }
 }
 load.style.display = "none";
