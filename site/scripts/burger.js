@@ -60,7 +60,7 @@ async function time_loop() {
         text.textContent = `You have stared at the hamburger for ${displayable_time}.`;
         await wait(1000);
         time++;
-        localStorage.setItem("stare_time",`${time}`)
+        localStorage.setItem("stare_time",time.toString)
     }
 }
 load.style.display = "none";
