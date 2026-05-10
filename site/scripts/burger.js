@@ -1,7 +1,11 @@
 const load = document.querySelector("#loading");
 const text = document.querySelector("#burger_text");
 const wait = (miliseconds) => new Promise(resolve => setTimeout(resolve, miliseconds));
-let time = 0;
+// browsing data oooh
+let time = Number(localStorage.getItem("stare"));
+if (time == null || time == NaN) {
+    time = 0;
+}
 let displayable_time = "";
 function make_displayable_time(seconds) {
     const units = [
@@ -52,6 +56,7 @@ async function time_loop() {
         text.textContent = `You have stared at the hamburger for ${displayable_time}.`;
         await wait(1000);
         time++;
+        localStorage.setItem("stare", String(time));
     }
 }
 load.style.display = "none";
