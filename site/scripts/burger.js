@@ -13,12 +13,12 @@ else {
 }
 function make_displayable_time(seconds) {
     const units = [
-    {label: "second", modulo: 60, divide: 1},    
-    {label: "minutes", modulo: 60, divide: 60},
-    {label: "hour", modulo: 24, divide: 60},
-    {label: "day", modulo: 365, divide: 24}, //how the fuck do you get past days
-    {label: "year", modulo: 10, divide: 365},
-    {label: "decade", modulo: 1, divide: 10}
+    {label: "second", modulo: 60, divide: 60},    
+    {label: "minute", modulo: 60, divide: 60},
+    {label: "hour", modulo: 24, divide: 24},
+    {label: "day", modulo: 365, divide: 365, //how the fuck do you get past days
+    {label: "year", modulo: 10, divide: 10},
+    {label: "decade", modulo: 1, divide: 1}
     ];
     let returnable = "";
     let next = seconds;
