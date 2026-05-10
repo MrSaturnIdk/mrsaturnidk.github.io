@@ -1,7 +1,8 @@
 const load = document.querySelector("#loading");
 const text = document.querySelector("#burger_text");
 const wait = (miliseconds) => new Promise(resolve => setTimeout(resolve, miliseconds));
-let displayable_time;
+let time = 0;
+let displayable_time = "";
 function make_displayable_time(seconds) {
     const units = [
     {label: "second", modulo: 60, divide: 60},    
