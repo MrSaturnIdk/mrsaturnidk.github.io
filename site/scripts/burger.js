@@ -13,9 +13,9 @@ else {
 // epic loop trust
 async function time_loop() {
     while (true) {
+        text.textContent = `You have stared at the hamburger for ${time} seconds`;
         await wait(1000);
         time++;
-        text.textContent = `You have stared at the hamburger for ${time} seconds`;
     }
 }
 load.style.display = "none";
