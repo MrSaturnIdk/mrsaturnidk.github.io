@@ -16,7 +16,7 @@ function make_displayable_time(seconds) {
     {label: "second", modulo: 60, divide: 60},    
     {label: "minute", modulo: 60, divide: 60},
     {label: "hour", modulo: 24, divide: 24},
-    {label: "day", modulo: 365, divide: 365, //how the fuck do you get past days
+    {label: "day", modulo: 365, divide: 365}, //how the fuck do you get past days
     {label: "year", modulo: 10, divide: 10},
     {label: "decade", modulo: 1, divide: 1}
     ];
