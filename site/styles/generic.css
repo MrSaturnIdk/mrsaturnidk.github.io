@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 25%;
     left: 50%;
-    translate: (-50%,-50%);
+    translate: -50% -50%;
     text-shadow: 2px 2px 3px #ffffff;
     z-index: 10;
 }
