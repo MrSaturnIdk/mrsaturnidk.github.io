@@ -3,8 +3,13 @@ const text = document.querySelector("#burger_text");
 const wait = (miliseconds) => new Promise(resolve => setTimeout(resolve, miliseconds));
 // browsing data oooh
 let time = Number(localStorage.getItem("stare"));
-if (time == null || time == NaN) {
+if (time == null) {
     time = 0;
+    console.log("New user");
+}
+else if (time == NaN) {
+    time = 0;
+    console.log("Error converting data for some reason");
 }
 let displayable_time = "";
 function make_displayable_time(seconds) {

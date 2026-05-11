@@ -1,9 +1,6 @@
 body {
     background-color: #f5bf60;
 }
-img {
-    height: auto;
-}
 a {
     font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
     font-family: "Lucida Handwriting", Arial, sans-serif;
@@ -32,7 +29,8 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 998;
 }
 #saturn {
-    width: clamp(10.5rem, 27.5vw, 30rem)
+    width: clamp(10.5rem, 27.5vw, 30rem);
+    height: auto;
 }
 #burger_text {
     text-align: center;
