@@ -58,7 +58,7 @@ async function time_loop() {
         if (displayable_time === "") {
             displayable_time = "0 seconds";
         }
-        text.textContent = `You have stared at the hamburger for ${displayable_time}.`;
+        text.textContent = `You have stared at the cheeseburger for ${displayable_time}.`;
         await wait(1000);
         time++;
         localStorage.setItem("stare", String(time));
