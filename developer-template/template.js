@@ -26,3 +26,4 @@ async function timeLoop() { // note camelcase for functions
     }
 }
 LOADING_SCREEN.style.display = "none"; // remove loading screen
+timeLoop();
