@@ -9,7 +9,7 @@ class UselessAndUnprefferedClassWithFunctionForChangingTextContentPurelyForCasin
         this.textElementToChange = textElement;
     }
     changeText() {
-        this.textElementToChange.textContent = `The time on this page in seconds is ${timeEvenDisplay} (javascript example). Also this is a dev page, you should't be here.`;
+        this.textElementToChange.textContent = `The time on this page in seconds is ${timeEvenDisplay} (javascript example). Also this is a dev page, you shouldn't be here.`;
     }
 }
 const TEXT_CRAP_CLASS = new UselessAndUnprefferedClassWithFunctionForChangingTextContentPurelyForCasingExampleInWhichNameIsExtremelyLongForAbsolutelyNoReason(MAIN_TEXT);
