@@ -1,8 +1,8 @@
-const load = document.querySelector("#loading");
-const text = document.querySelector("#burger_text");
-const wait = (miliseconds) => new Promise(resolve => setTimeout(resolve, miliseconds));
+const LOADING_SCREEN = document.querySelector("#loading-screen");
+const BURGER_TEXT = document.querySelector("#burger-text");
+const WAIT = (miliseconds) => new Promise(resolve => setTimeout(resolve, miliseconds));
 // browsing data oooh
-let time = Number(localStorage.getItem("stare"));
+let time = Number(localStorage.getItem("stareTime"));
 if (time == null) {
     time = 0;
     console.log("New user");
@@ -11,9 +11,9 @@ else if (time == NaN) {
     time = 0;
     console.log("Error converting data for some reason");
 }
-let displayable_time = "";
-function make_displayable_time(seconds) {
-    const units = [
+let displayableTime = "";
+function makeDisplayableTime(seconds) {
+    const UNITS = [
     {label: "second", modulo: 60, divide: 60},    
     {label: "minute", modulo: 60, divide: 60},
     {label: "hour", modulo: 24, divide: 24},
@@ -23,15 +23,15 @@ function make_displayable_time(seconds) {
     ];
     let returnable = "";
     let next = seconds;
-    for (let i = 0; i < units.length; i++) {
-        const {label, modulo, divide} = units[i];
-        const next_modued = next % modulo;
-        if (next_modued == 1) {
-            returnable = `${next_modued} ${label}, ` + returnable;
+    for (let i = 0; i < UNITS.length; i++) {
+        const {label, modulo, divide} = UNITS[i];
+        const NEXT_MODUED = next % modulo;
+        if (NEXT_MODUED == 1) {
+            returnable = `${NEXT_MODUED} ${label}, ` + returnable;
         } 
-        else if (next_modued == 0) {/*empty*/} 
+        else if (NEXT_MODUED == 0) {/*empty*/} 
         else {
-            returnable = `${next_modued} ${label}s, ` + returnable;
+            returnable = `${NEXT_MODUED} ${label}s, ` + returnable;
         }
         next = Math.floor(next/divide);
     }
@@ -39,31 +39,31 @@ function make_displayable_time(seconds) {
     if (returnable.endsWith(",")) {
         returnable = returnable.slice(0,-1);
     }
-    const last_comma = returnable.lastIndexOf(",");
-    const first_comma = returnable.indexOf(",");
-    if (last_comma !== -1) {
-        if (last_comma == first_comma) {
-            returnable = `${returnable.slice(0, last_comma)} and${returnable.slice(last_comma +1)}`;
+    const LAST_COMMA = returnable.lastIndexOf(",");
+    const FIRST_COMMA = returnable.indexOf(",");
+    if (LAST_COMMA !== -1) {
+        if (LAST_COMMA == FIRST_COMMA) {
+            returnable = `${returnable.slice(0, LAST_COMMA)} and${returnable.slice(LAST_COMMA +1)}`;
         }
         else {
-        returnable = `${returnable.slice(0, last_comma)}, and${returnable.slice(last_comma + 1)}`;
+        returnable = `${returnable.slice(0, LAST_COMMA)}, and${returnable.slice(LAST_COMMA + 1)}`;
         }
     }
     return returnable;
 }
 // epic loop trust
-async function time_loop() {
+async function timeLoop() {
     while (true) {
-        displayable_time = make_displayable_time(time);
-        if (displayable_time === "") {
-            displayable_time = "0 seconds";
+        displayableTime = makeDisplayableTime(time);
+        if (displayableTime === "") {
+            displayableTime = "0 seconds";
         }
-        text.textContent = `You have stared at the cheeseburger for ${displayable_time}.`;
-        await wait(1000);
+        BURGER_TEXT.textContent = `You have stared at the cheeseburger for ${displayableTime}.`;
+        await WAIT(1000);
         time++;
-        localStorage.setItem("stare", String(time));
+        localStorage.setItem("stareTime", String(time));
     }
 }
-load.style.display = "none";
+LOADING_SCREEN.style.display = "none";
 console.log("Hooray it loaded");
-time_loop();
+timeLoop();
