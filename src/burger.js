@@ -1,27 +1,27 @@
-const LOADING_SCREEN = document.querySelector("#loading-screen");
-const BURGER_TEXT = document.querySelector("#burger-text");
+const LOADING_SCREEN = document.querySelector('#loading-screen');
+const BURGER_TEXT = document.querySelector('#burger-text');
 const WAIT = (miliseconds) => new Promise(resolve => setTimeout(resolve, miliseconds));
 // browsing data oooh
-let time = Number(localStorage.getItem("stareTime"));
+let time = Number(localStorage.getItem('stareTime'));
 if (time == null) {
     time = 0;
-    console.log("New user");
+    console.log('New user');
 }
 else if (time == NaN) {
     time = 0;
-    console.log("Error converting data for some reason");
+    console.log('Error converting data for some reason');
 }
-let displayableTime = "";
+let displayableTime = '';
 function makeDisplayableTime(seconds) {
     const UNITS = [
-    {label: "second", modulo: 60, divide: 60},    
-    {label: "minute", modulo: 60, divide: 60},
-    {label: "hour", modulo: 24, divide: 24},
-    {label: "day", modulo: 365, divide: 365}, //how the fuck do you get past days
-    {label: "year", modulo: 10, divide: 10},
-    {label: "decade", modulo: 1, divide: 1}
+    {label: 'second', modulo: 60, divide: 60},    
+    {label: 'minute', modulo: 60, divide: 60},
+    {label: 'hour', modulo: 24, divide: 24},
+    {label: 'day', modulo: 365, divide: 365}, //how the fuck do you get past days
+    {label: 'year', modulo: 10, divide: 10},
+    {label: 'decade', modulo: 1, divide: 1}
     ];
-    let returnable = "";
+    let returnable = '';
     let next = seconds;
     for (let i = 0; i < UNITS.length; i++) {
         const {label, modulo, divide} = UNITS[i];
@@ -36,11 +36,11 @@ function makeDisplayableTime(seconds) {
         next = Math.floor(next/divide);
     }
     returnable = returnable.trim();
-    if (returnable.endsWith(",")) {
+    if (returnable.endsWith(',')) {
         returnable = returnable.slice(0,-1);
     }
-    const LAST_COMMA = returnable.lastIndexOf(",");
-    const FIRST_COMMA = returnable.indexOf(",");
+    const LAST_COMMA = returnable.lastIndexOf(',');
+    const FIRST_COMMA = returnable.indexOf(',');
     if (LAST_COMMA !== -1) {
         if (LAST_COMMA == FIRST_COMMA) {
             returnable = `${returnable.slice(0, LAST_COMMA)} and${returnable.slice(LAST_COMMA +1)}`;
@@ -55,15 +55,15 @@ function makeDisplayableTime(seconds) {
 async function timeLoop() {
     while (true) {
         displayableTime = makeDisplayableTime(time);
-        if (displayableTime === "") {
-            displayableTime = "0 seconds";
+        if (displayableTime === '') {
+            displayableTime = '0 seconds';
         }
         BURGER_TEXT.textContent = `You have stared at the cheeseburger for ${displayableTime}.`;
         await WAIT(1000);
         time++;
-        localStorage.setItem("stareTime", String(time));
+        localStorage.setItem('stareTime', String(time));
     }
 }
-LOADING_SCREEN.style.display = "none";
-console.log("Hooray it loaded");
+LOADING_SCREEN.style.display = 'none';
+console.log('Hooray it loaded');
 timeLoop();
