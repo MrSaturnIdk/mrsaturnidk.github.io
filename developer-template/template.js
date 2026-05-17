@@ -23,6 +23,7 @@ async function timeLoop() { // note camelcase for functions
         }
         TEXT_CRAP_CLASS.changeText();
         await WAIT(1000);
+        time++;
     }
 }
 LOADING_SCREEN.style.display = "none"; // remove loading screen
