@@ -3,20 +3,21 @@
     <head>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="./template.css">
+        <link rel="stylesheet" href="simply-for-positioning.css"> <!--this is specifically for positioning the elements. not a template.-->
         <script src="./template.js" defer></script> <!--use defer with loading screen-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--usually always use this sizing so it takes up the whole screen-->
         <meta name="description" content="Dev template"/>
         <title>Dev template</title> 
+        <!--the "default" icons-->
         <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
         <link rel="manifest" href="../assets/icons/site.webmanifest">
-    </head> <!--keep links relative-->
+    </head> <!--keep links relative, and also use "./file" over "file" if they're in the same folder-->
     <body>
-        <img src="../assets/spinning.gif" alt="insert saturn spinning" id="saturn" top="25%" left="50%" translate="-50%, -50%" z-index="1" positon="absolute"><!--Mr saturn gif I like to put on every page I can, give him the same id every time for styling in css-->
-        <!--the gif is only positioned like this here. most of the time it is not positioned explicitly and has a <br> after-->
-        <noscript><img src="../../assets/enable-java.png" alt="enable java please" class="giant" id="no-script"></noscript>
-        <img src="../../assets/loading-screen.png" alt="loading" class="giant" id="loading-screen"> <!--javascript crap-->
-        <p id="main-text" top="50%" left="50%" translate="-50%, -50%" z-index="10" positon="absolute"></p> <!--notice kebab-case usage for id stuff-->
+        <img src="../assets/spinning.gif" alt="insert saturn spinning" id="saturn"><!--Mr saturn gif I like to put on every page I can, give him the same id every time for styling in css-->
+        <noscript><img src="../assets/enable-java.png" alt="enable java please" class="giant" id="no-script"></noscript>
+        <img src="../assets/loading-screen.png" alt="loading" class="giant" id="loading-screen"> <!--javascript crap, like loading screen and telling the user to turn it on. Only use this if it has scripts.-->
+        <p id="main-text"></p> <!--notice kebab-case usage for id stuff-->
     </body>
 </html>
