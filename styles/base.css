@@ -3,18 +3,18 @@ body {
 }
 a {
     font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
-    font-family: "Lucida Handwriting", Arial, sans-serif;
+    font-family: Arial, sans-serif;
     text-decoration: revert;
     color: revert;
 }
 p, li {
     font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
-    font-family: "Lucida Handwriting", Arial, sans-serif;
+    font-family: Arial, sans-serif;
     text-decoration: #000000;
 }
 h1, h2, h3, h4, h5, h6 {
     font-size: clamp(2rem, 5vw + 1rem, 4rem);
-    font-family: "Lucida Handwriting", Arial, sans-serif;
+    font-family: Arial, sans-serif;
     text-decoration: #000000;
 }
 /* for plastering a giant image */
