@@ -2,7 +2,11 @@ name: Deploy
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
+    paths-ignore: # useless crap push prevention
+      - *.md
+      - LICENSE*
+      - .github/**
   workflow_dispatch:
 
 permissions:
@@ -11,7 +15,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -28,7 +32,11 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5.0.0
         with:
-          path: '.'
+          path: .
+          exclude: |
+              *.md
+              LICENSE*
+              .github/**
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5.0.0
