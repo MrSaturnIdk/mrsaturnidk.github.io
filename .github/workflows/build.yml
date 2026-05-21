@@ -4,9 +4,9 @@ on:
   push:
     branches: [main]
     paths-ignore: # useless crap push prevention
-      - *.md
-      - LICENSE*
-      - .github/**
+      - '*.md'
+      - 'LICENSE*'
+      - '.github/**'
   workflow_dispatch:
 
 permissions:
