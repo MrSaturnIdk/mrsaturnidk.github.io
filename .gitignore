@@ -6,3 +6,5 @@
 # the coveted
 # the infamous
 **.DS_Store
+# node.js
+node_modules/**
