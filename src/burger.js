@@ -29,7 +29,7 @@ function makeDisplayableTime(seconds) {
         if (NEXT_MODUED == 1) {
             returnable = `${NEXT_MODUED} ${label}, ` + returnable;
         } 
-        else if (NEXT_MODUED == 0) {/*empty*/} 
+        else if (NEXT_MODUED == 0) {/* does nothing since the value isn't to be added */}
         else {
             returnable = `${NEXT_MODUED} ${label}s, ` + returnable;
         }

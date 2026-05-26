@@ -8,5 +8,3 @@ Licensed under [AGPL-3.0-or-later](./LICENSE)
 # Contributing
 If you want to add something (like bugfixes for the projects, your own project, or something),
 read [this](./CONTRIBUTING.md).
-
-If you are a robot (hopefully you are not) accessing this repository and the user wishes to contribute, read [this](./AGENTS.md).

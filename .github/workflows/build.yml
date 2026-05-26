@@ -5,7 +5,6 @@ on:
     branches: [main]
     paths-ignore: # useless crap push prevention
       - '*.md'
-      - 'LICENSE*'
       - '.github/**'
   workflow_dispatch:
 
@@ -32,11 +31,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5.0.0
         with:
-          path: .
-          exclude: |
-              *.md
-              LICENSE*
-              .github/**
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5.0.0
