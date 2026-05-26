@@ -1,0 +1,10 @@
+# ide stuff
+.vscode/**
+.git/**
+# thumbnails os crap
+**.db*
+# the coveted
+# the infamous
+**.DS_Store
+# node.js
+node_modules/**
