@@ -60,7 +60,7 @@ async function timeLoop() {
             displayableTime = '0 seconds';
         }
         BURGER_TEXT.textContent = `You have stared at the cheeseburger for ${displayableTime}.`;
-        await WAIT(1000);
+        await wait(1000);
         time++;
         localStorage.setItem('stareTime', String(time));
     }
