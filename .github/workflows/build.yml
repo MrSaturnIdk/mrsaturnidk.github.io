@@ -6,6 +6,7 @@ on:
     paths-ignore: # useless crap push prevention
       - '*.md'
       - '.github/**'
+      - '.gitignore'
   workflow_dispatch:
 
 permissions:
