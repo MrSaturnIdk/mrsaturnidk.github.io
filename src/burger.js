@@ -1,6 +1,5 @@
 const LOADING_SCREEN = document.querySelector('#loading-screen');
 const BURGER_TEXT = document.querySelector('#burger-text');
-const WAIT = (miliseconds) => new Promise(resolve => setTimeout(resolve, miliseconds));
 // browsing data oooh
 let time = Number(localStorage.getItem('stareTime'));
 if (time == null) {
@@ -12,6 +11,9 @@ else if (time == NaN) {
     console.log('Error converting data for some reason');
 }
 let displayableTime = '';
+function wait(miliseconds) {
+    new Promise(resolve => setTimeout(resolve, miliseconds));
+}
 function makeDisplayableTime(seconds) {
     const UNITS = [
     {label: 'second', modulo: 60, divide: 60},    
@@ -28,9 +30,9 @@ function makeDisplayableTime(seconds) {
         const NEXT_MODUED = next % modulo;
         if (NEXT_MODUED == 1) {
             returnable = `${NEXT_MODUED} ${label}, ` + returnable;
-        } 
-        else if (NEXT_MODUED == 0) {/* does nothing since the value isn't to be added */}
-        else {
+        } else if (NEXT_MODUED == 0) {
+            /* does nothing since the value isn't to be added */
+        } else {
             returnable = `${NEXT_MODUED} ${label}s, ` + returnable;
         }
         next = Math.floor(next/divide);
@@ -44,9 +46,8 @@ function makeDisplayableTime(seconds) {
     if (LAST_COMMA !== -1) {
         if (LAST_COMMA == FIRST_COMMA) {
             returnable = `${returnable.slice(0, LAST_COMMA)} and${returnable.slice(LAST_COMMA +1)}`;
-        }
-        else {
-        returnable = `${returnable.slice(0, LAST_COMMA)}, and${returnable.slice(LAST_COMMA + 1)}`;
+        } else {
+            returnable = `${returnable.slice(0, LAST_COMMA)}, and${returnable.slice(LAST_COMMA + 1)}`;
         }
     }
     return returnable;
