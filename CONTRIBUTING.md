@@ -59,12 +59,14 @@ root/
 ### Naming
 - IDs/Classes should use **kebab-case**
 - Use " instead of '
+- End self-closing with " /" over leaving it empty
+- Define types in files
 ```html
 <!-- Good -->
-<p id=foo-bar">h</p>
+<img src="../assets/foo-bar.png" id="foo-bar" type="image.png"/>
 
 <!-- Bad -->
-<p id='foobar'>h</p>
+<img src='../assets/foobar.png" id='foobar'>
 ```
 ### Layout
 - Define head in this order: 
@@ -84,25 +86,29 @@ root/
 ```
 ### Template
 ```html
-<!-- template -->
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- scrollable -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover"> use this for no scroll -->
-    <title>foo</title>
-    <meta name="description" content="bar">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png"
-    <link rel="icon" type="image/png" sizes="16x16" href=../assets/icons/favicon-16x16.png">
-    <link rel="manifest" href="../assets/icons/site.webmanifest">
-    <link rel="stylesheet" href="../styles/base.css"> <!-- always have base.css for the background and font sizes and stuff -->
-    <link rel="stylsheet" href="../foo.css"> <!-- second stylesheet specfic to page -->
-    <script src="../src/bar.js" defer></script>
-</head>
-<body>
-    <noscript><img src="../assets/enable-java.png" alt="enable java please" class="giant" id="no-script"></noscript> <!-- if java isn't enabled (for pages with js) -->
-    <img src="../assets/loading-screen.png" alt="loading" class="giant" id="loading-screen"> <!-- loading screen is removed once js is initialized
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- scrollable -->
+        <!-- <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, viewport-fit=cover" /> use this for no scroll -->
+        <title>foo</title>
+        <meta name="description" content="bar" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href=../assets/icons/favicon-16x16.png" />
+        <link rel="manifest" href="../assets/icons/site.webmanifest" />
+        <link rel="stylesheet" href="../styles/base.css" /> <!-- always have base.css for the background and font sizes and stuff -->
+        <link rel="stylsheet" href="../foo.css" /> <!-- second stylesheet specfic to page -->
+        <script src="../src/bar.js" defer></script>
+    </head>
+    <body>
+        <img src="../assets/spinning.gif" id="saturn" type="image/gif" /> <!-- Mr saturn spinning gif (defined in base.css) -->
+        <noscript><img src="../assets/enable-java.png" alt="enable java please" class="giant" id="no-script"></noscript> <!-- if java isnt enabled (for pages with js) -->
+        <img src="../assets/loading-screen.png" alt="loading" class="giant" id="loading-screen"> <!-- loading screen is removed once js is initialized
 Also note these IDs and classes are defined in base.css -->
+    </body>
+</html>
 ```
 ## CSS
 ### Naming
