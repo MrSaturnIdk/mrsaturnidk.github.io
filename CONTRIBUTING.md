@@ -61,7 +61,7 @@ root/
 - Use " instead of '
 ```html
 <!-- Good -->
-<p id=foo-bar">h</p>
+<p id="foo-bar">h</p>
 
 <!-- Bad -->
 <p id='foobar'>h</p>
