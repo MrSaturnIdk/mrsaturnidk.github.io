@@ -102,6 +102,7 @@ root/
     <script src="../src/bar.js" defer></script>
 </head>
 <body>
+    <img src="../assets/spinning.gif" id=saturn" type="image/gif" /> <!-- Mr saturn spinning gif (defined in base.css) -->
     <noscript><img src="../assets/enable-java.png" alt="enable java please" class="giant" id="no-script"></noscript> <!-- if java isn't enabled (for pages with js) -->
     <img src="../assets/loading-screen.png" alt="loading" class="giant" id="loading-screen"> <!-- loading screen is removed once js is initialized
 Also note these IDs and classes are defined in base.css -->
