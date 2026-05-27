@@ -12,7 +12,7 @@ else if (time == NaN) {
 }
 let displayableTime = '';
 function wait(miliseconds) {
-    new Promise(resolve => setTimeout(resolve, miliseconds));
+    return new Promise(resolve => setTimeout(resolve, miliseconds));
 }
 function makeDisplayableTime(seconds) {
     const UNITS = [
