@@ -66,7 +66,7 @@ root/
 <img src="../assets/foo-bar.png" id="foo-bar" type="image.png"/>
 
 <!-- Bad -->
-<img src='../assets/foobar.png" id='foobar'>
+<img src='../assets/foobar.png' id='foobar'>
 ```
 ### Layout
 - Define head in this order: 
@@ -90,8 +90,7 @@ root/
 <html>
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- scrollable -->
-        <!-- <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, viewport-fit=cover" /> use this for no scroll -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>foo</title>
         <meta name="description" content="bar" />
         <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png" />
@@ -119,6 +118,13 @@ Define rules in this order:
 2. Element rules
 3. Classes
 4. Ids
+### Unscrollability
+If a page should be unscrollable, add 
+```css
+body {
+    overflow: hidden;
+}
+```
 ```css
 @keyframes foo-bar {
     /* idk */ 
@@ -143,6 +149,22 @@ Otherwise, use **const**.
 - *Constant* variables use **SCREAMING_SNAKE_CASE**
 - Classes and getters use **PascalCase**
 - Use ' over "
+```js
+// Good
+if (1 == 2) {
+    // code
+} else {
+    // code
+}
+
+// Bad
+if(1==2){
+    // code
+}
+else{
+
+}
+```
 ### Layout
 1. Constants
 2. Let variables
@@ -156,7 +178,7 @@ Otherwise, use **const**.
 7. Remove loading screen
 8. Implementation (if so)
 ```js
-// Good/template
+// Good
 const LOADING_SCREEN = document.querySelector('#loading-screen');
 let fooBar = '0';
 class FooBar {
