@@ -1,5 +1,9 @@
+# Note
+This is the **universal** contributing guide linked in all my site projects.
+**Universal** files go in the github.io page. (More than that specifc page)
+**Specific** files go in the respective project repo. (Only that page)
 # Where to develop
-Pull request to the [develop](https://github.com/MrSaturnIdk/MrSaturnIdk.github.io/tree/develop) branch.
+Pull request to the develop branch.
 # Organization
 - Pretty important to use naming conventions and organization so you don't get lost in wondering what a variable is.
 ## Commenting
