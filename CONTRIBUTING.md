@@ -147,6 +147,18 @@ p {
 **Only** use let if the variable changes.
 
 Otherwise, use **const**.
+### Be strict...
+- Use strict
+- Use `===` over `==` (and `!==` over `!=`) *unless* they should be loose
+```js
+// Good
+'use strict';
+if ('foo' === bar || 'foobar' !== foo)
+
+// Bad
+// Lacking use strict
+if ('foo' == bar || 'foobar' != foo)
+```
 ### Naming
 - Be descriptive
 - *Normal* variables, methods, class static and functions use **camelCase**
