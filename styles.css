@@ -20,7 +20,17 @@ h1, h2, h3, h4, h5, h6 {
     color: revert;
     font-size: inherit;
 }
+.giant {
+    width: 100vw;
+    height: 100vh;
+}
 #saturn {
     width: clamp(10.5rem, 27.5vw, 30rem);
     height: auto;
+}
+#no-script {
+    z-index: 999;
+}
+#loading-screen {
+    z-index: 998;
 }
