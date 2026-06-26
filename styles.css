@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: Arial, sans-serif;
     text-decoration: #000000;
 }
-.child-a {
+.childA {
     text-decoration: revert;
     color: revert;
     font-size: inherit;
@@ -28,9 +28,9 @@ h1, h2, h3, h4, h5, h6 {
     width: clamp(10.5rem, 27.5vw, 30rem);
     height: auto;
 }
-#no-script {
+#noScript {
     z-index: 999;
 }
-#loading-screen {
+#loadingScreen {
     z-index: 998;
 }
