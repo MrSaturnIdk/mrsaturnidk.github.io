@@ -1,7 +1,7 @@
 # MrSaturnIdk.github.io
 It's just my github.io, what do you expect.
 ## Copyright & Licensing
-Copyright © 2026 MrSaturnIdk. 
+Copyright (c) 2026 MrSaturnIdk. 
 
 Licensed under the [AGPL-3.0-or-later](LICENSE).
 ### Third party asset
