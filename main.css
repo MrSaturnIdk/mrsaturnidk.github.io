@@ -1,66 +1,66 @@
 html, body {
-    margin: 0;
-    height: 100%;
+	margin: 0;
+	height: 100%;
 }
 body, input, button {
-    background-color: #F5BF60;
+	background-color: #F5BF60;
 }
 h1, h2, h3, h4, h5, h6, p, li, a, input, button {
-    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
-    color: #000000;
+	font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+	color: #000000;
 }
 
 a, p, li, input, button {
-    font-size: 1rem;
+	font-size: 1rem;
 }
 h1 {
-    font-size: 2rem;
+	font-size: 2rem;
 }
 h2 {
-    font-size: 1.5rem; 
+	font-size: 1.5rem;
 }
 h3 {
-    font-size: 1.25rem;
+	font-size: 1.25rem;
 }
 h4 {
-    font-size: 1rem;
+	font-size: 1rem;
 }
 h5 {
-    font-size: 0.875rem;
+	font-size: 0.875rem;
 }
 h6 {
-    font-size: 0.85rem;
+	font-size: 0.85rem;
 }
 
 a {
-    text-decoration: revert;
-    color: revert;
-    font-size: inherit;
-    opacity: inherit;
+	text-decoration: revert;
+	color: revert;
+	font-size: inherit;
+	opacity: inherit;
 }
 noscript {
-    z-index: 999;
-    background-color: #F5BF60;
+	z-index: 999;
+	background-color: #F5BF60;
 }
 noscript h1, #loading-screen h1 {
-    position: absolute;
-    left: 50vw;
-    top: 50vh;
-    translate: -50% -50%;
+	position: absolute;
+	left: 50vw;
+	top: 50vh;
+	translate: -50% -50%;
 }
 .giant {
-    margin: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
 }
 
 #spinning-saturn {
-    width: 25vw;
+	width: 25vw;
 }
 #loading-screen {
-    z-index: 998;
-    background-color: #F5BF60;
+	z-index: 998;
+	background-color: #F5BF60;
 }
