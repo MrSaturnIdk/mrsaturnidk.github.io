@@ -32,12 +32,8 @@ jobs:
                                 submodules: true
                         - name: Remove useless files
                           run: |
-                                rm README.md
-                                rm LICENSE
-                                rm web/stare-at-burger/README.md
-                                rm web/stare-at-burger/LICENSE
-                                rm web/font-size-tester/README.md
-                                rm web/font-size-tester/LICENSE
+                                rm README.md LICENSE web/stare-at-burger/README.md web/stare-at-burger/LICENSE
+                                rm web/font-size-tester/README.md web/font-size-tester/LICENSE
                         - name: Configure site
                           uses: actions/configure-pages@v6
                         - name: Upload site artifact
