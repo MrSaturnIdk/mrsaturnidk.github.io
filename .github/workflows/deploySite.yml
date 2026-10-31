@@ -26,14 +26,31 @@ jobs:
                         url: ${{ steps.deployment.outputs.page_url }}
                 runs-on : ubuntu-latest
                 steps:
+                        # Needed stuff
                         - name: Checkout the repo
                           uses: actions/checkout@v7
                           with:
                                 submodules: true
+                        - name: Install doxygen
+                          run: |
+                                sudo apt-get update
+                                sudo apt-get install doxygen graphviz
+
+                        # Self made
+                        - name: Make docs for small-list-utils
+                          run: |
+                                cd projects/small-list-utils
+                                doxygen
+                                mv docs/html ..
+                                rm -rf *
+                                mv ../html/* .
+                                rmdir ../html # rmdir funny
                         - name: Remove useless files
                           run: |
                                 rm README.md LICENSE web/stare-at-burger/README.md web/stare-at-burger/LICENSE
                                 rm web/font-size-tester/README.md web/font-size-tester/LICENSE
+
+                        # Premade crap
                         - name: Configure site
                           uses: actions/configure-pages@v6
                         - name: Upload site artifact

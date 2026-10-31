@@ -4,3 +4,6 @@
 [submodule "web/font-size-tester"]
 	path = web/font-size-tester
 	url = https://github.com/MrSaturnIdk/font-size-tester.git
+[submodule "projects/small-list-utils"]
+	path = projects/small-list-utils
+	url = https://github.com/MrSaturnIdk/small-list-utils.git
