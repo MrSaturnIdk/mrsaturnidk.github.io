@@ -26,11 +26,27 @@ jobs:
                         url: ${{ steps.deployment.outputs.page_url }}
                 runs-on : ubuntu-latest
                 steps:
-                        # Needed stuff
+                        # Repos
                         - name: Checkout the repo
                           uses: actions/checkout@v7
+                        - name: Checkout the burger thing
+                          uses: actions/checkout@v7
                           with:
-                                submodules: true
+                                repository: "MrSaturnIdk/stare-at-burger"
+                                path: "web/stare-at-burger"
+                        - name: Checkout the font thing
+                          uses: actions/checkout@v7
+                          with:
+                                repository: "MrSaturnIdk/font-size-tester"
+                                path: "web/font-size-tester"
+                        - name: Checkout the list library
+                          uses: actions/checkout@v7
+                          with:
+                                repository: "MrSaturnIdk/small-list-utils"
+                                path: ".slu"
+                                fetch-depth: 0
+
+                        # Toolchain
                         - name: Install doxygen
                           run: |
                                 sudo apt-get update
@@ -39,12 +55,27 @@ jobs:
                         # Self made
                         - name: Make docs for small-list-utils
                           run: |
-                                cd projects/small-list-utils
-                                doxygen
-                                mv docs/html ..
-                                rm -rf *
-                                mv ../html/* .
-                                rmdir ../html # rmdir funny
+                                cd .slu
+                                i=0
+                                content=""
+                                for tag in $(git tag --sort=-v:refname); do
+                                        latest=""
+                                        stable=""
+                                        if [ "$i" -eq 0 ]; then
+                                                latest=" (Latest)"
+                                                i=$((i + 1))
+                                        fi
+                                        if [ "$tag" = "$(cat ../projects/small-list-utils/stable.txt)" ]; then
+                                                stable=" (Latest Stable)"
+                                        fi
+                                        content="${content} <li><a href=\"${tag}\">${tag}${latest}${stable}</a></li>"
+                                        git switch --detach "$tag" || git checkout --detach "$tag" || git checkout "$tag"
+                                        doxygen
+                                        mv docs/html "../projects/small-list-utils/$tag"
+                                        rm -rf docs
+                                done
+                                cd ..
+                                sed -i "49s|__THE_CONTENT__|${content}|" projects/small-list-utils/index.html
                         - name: Remove useless files
                           run: |
                                 rm README.md LICENSE web/stare-at-burger/README.md web/stare-at-burger/LICENSE
