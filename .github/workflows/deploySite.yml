@@ -58,14 +58,16 @@ jobs:
                                 cd .slu
                                 i=0
                                 content=""
+                                stable_ver=""
                                 for tag in $(git tag --sort=-v:refname); do
                                         latest=""
                                         stable=""
                                         if [ "$i" -eq 0 ]; then
+                                                stable_ver="$(cat stable.txt)"
                                                 latest=" (Latest)"
                                                 i=$((i + 1))
                                         fi
-                                        if [ "$tag" = "$(cat ../projects/small-list-utils/stable.txt)" ]; then
+                                        if [ "$tag" = "$stable_ver" ]; then
                                                 stable=" (Latest Stable)"
                                         fi
                                         content="${content} <li><a href=\"${tag}\">${tag}${latest}${stable}</a></li>"
@@ -75,7 +77,7 @@ jobs:
                                         rm -rf docs
                                 done
                                 cd ..
-                                sed -i "49s|__THE_CONTENT__|${content}|" projects/small-list-utils/index.html
+                                sed -i "s|__THE_CONTENT__|${content}|" projects/small-list-utils/index.html
                         - name: Remove useless files
                           run: |
                                 rm README.md LICENSE web/stare-at-burger/README.md web/stare-at-burger/LICENSE
