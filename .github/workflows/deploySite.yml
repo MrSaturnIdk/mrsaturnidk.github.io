@@ -70,7 +70,7 @@ jobs:
                                         if [ "$tag" = "$stable_ver" ]; then
                                                 stable=" (Latest Stable)"
                                         fi
-                                        content="${content} <li><a href=\"${tag}\">${tag}${latest}${stable}</a></li>"
+                                        content="${content} <li><a href=\"${tag}/\">${tag}${latest}${stable}</a></li>"
                                         git switch --detach "$tag" || git checkout --detach "$tag" || git checkout "$tag"
                                         doxygen
                                         mv docs/html "../projects/small-list-utils/$tag"
